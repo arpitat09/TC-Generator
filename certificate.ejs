@@ -1,0 +1,76 @@
+<!-- views/certificate.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transfer Certificate</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      background: #fff;
+      padding: 40px;
+    }
+    .certificate-box {
+      border: 2px solid #000;
+      padding: 40px;
+      max-width: 850px;
+      margin: auto;
+      background-color: #fdfdfd;
+    }
+    .logo {
+      width: 100px;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    h1, h2 {
+      text-align: center;
+      margin: 10px 0;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    .signature {
+      margin-top: 50px;
+      text-align: right;
+    }
+    .download-btn {
+      display: block;
+      margin: 30px auto;
+      text-align: center;
+    }
+    .download-btn button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #0d47a1;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="tc-content" class="certificate-box">
+    <img src="/public/logo.png" alt="College Logo" class="logo">
+    <h1>INSTITUTE NAME</h1>
+    <h2>TRANSFER CERTIFICATE</h2>
+
+    <p>This is to certify that <strong><%= name %></strong>, bearing USN <strong><%= usn %></strong>, was a student of the <strong><%= branch %></strong> department. He/She was admitted in the year <strong><%= year_of_join %></strong> and has completed/left the course in the year <strong><%= year_of_exit %></strong>.</p>
+
+    <p>He/She was enrolled in <strong><%= className %></strong>, Semester <strong><%= semester %></strong>, during the academic year <strong><%= academic_year %></strong>. He/She secured <strong><%= performance %></strong> as their performance score.</p>
+
+    <p>Reason for leaving the institution: <strong><%= reason %></strong>.</p>
+
+    <p>Date of Issue: <%= new Date().toLocaleDateString() %></p>
+
+    <div class="signature">
+      <p>Rajesh S</p>
+      <p><strong>Principal</strong></p>
+    </div>
+  </div>
+
+  <div class="download-btn">
+    <button onclick="print()">Download Certificate</button>
+  </div>
+</body>
+</html>
